@@ -51,6 +51,7 @@ namespace DanielLochner.Assets.CreatureCreator
                 if (SystemUtility.IsDevice(DeviceType.Handheld) && GameServices.Instance.IsLoggedIn())
                 {
                     GameServices.Instance.ShowAchievementsUI();
+                    //
                 }
                 else
                 {

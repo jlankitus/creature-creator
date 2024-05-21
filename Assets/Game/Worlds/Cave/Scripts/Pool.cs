@@ -11,7 +11,7 @@ namespace DanielLochner.Assets.CreatureCreator
         [SerializeField] private Ability swimAbility;
         [Space]
         [SerializeField] private PWater water;
-        [SerializeField] private PWaterEmissionSetter waterEmission;
+        // [SerializeField] private PWaterEmissionSetter waterEmission;
         [Space]
         [SerializeField] private GameObject fumes;
         [SerializeField] private GameObject healPrefab;
@@ -102,9 +102,9 @@ namespace DanielLochner.Assets.CreatureCreator
         private void SetColour(Color colour)
         {
             water.Profile.Color = water.Profile.DepthColor = colour;
-            if (waterEmission != null)
+            if (water.MaterialToRender.color != null)
             {
-                waterEmission.emission = colour;
+                water.MaterialToRender.color = colour;
             }
         }
         #endregion

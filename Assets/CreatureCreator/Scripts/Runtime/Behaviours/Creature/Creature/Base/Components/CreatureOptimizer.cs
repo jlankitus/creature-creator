@@ -16,7 +16,7 @@ namespace DanielLochner.Assets.CreatureCreator
         #region Properties
         private CreatureConstructor Constructor { get; set; }
         private MB3_MeshBaker Baker { get; set; }
-        private MB_HackTextureAtlasExample Hack { get; set; }
+        // private MB_HackTextureAtlasExample Hack { get; set; }
 
         public SkinnedMeshRenderer OptimizedCreature { get; private set; }
 
@@ -28,7 +28,7 @@ namespace DanielLochner.Assets.CreatureCreator
         {
             Constructor = GetComponent<CreatureConstructor>();
             Baker = GetComponent<MB3_MeshBaker>();
-            Hack = GetComponent<MB_HackTextureAtlasExample>();
+            // Hack = GetComponent<MB_HackTextureAtlasExample>();
         }
         private void LateUpdate()
         {
@@ -60,9 +60,11 @@ namespace DanielLochner.Assets.CreatureCreator
                         AddBodyPart(bpc.Flipped, matsToCombine);
                     }
                 }
-                Hack.sourceMaterials = matsToCombine.ToArray();
-                Hack.GenerateMaterialBakeResult();
 
+                // Hack.sourceMaterials = matsToCombine.ToArray();
+                // Hack.GenerateMaterialBakeResult();
+
+                
 
                 // Mesh
                 FlipLimbs();
@@ -73,7 +75,7 @@ namespace DanielLochner.Assets.CreatureCreator
                     objsToCombine[i] = bodyPartsToAdd[i].Renderer.gameObject;
                 }
 
-                Baker.textureBakeResults = Hack.materialBakeResult;
+                // Baker.textureBakeResults = Hack.materialBakeResult;
                 Baker.ClearMesh();
 
                 if (Baker.AddDeleteGameObjects(objsToCombine, null, true))
